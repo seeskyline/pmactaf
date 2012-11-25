@@ -1,0 +1,24 @@
+body{
+		background-color:#ffffff;
+		padding: 0px 0px 60px 0px;
+}
+
+#intro {
+	color:RGB(255,0,0);
+}
+	
+#footer {
+	color:RGB(255,0,0);
+}
+
+img{
+    display:block;margin: 0 auto;
+    max-width:300px;
+}
+		
+
+.img_wrapper{text-align:center}
+
+.img_wrapper img{border:0px solid #000; display:block; margin:0 auto}
+
+.img_wrapper .img_descr{ margin:5px auto; display:inline-block; display:-moz-inline-stack;zoom:1; text-align:left}
