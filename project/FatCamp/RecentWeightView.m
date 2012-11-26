@@ -180,7 +180,7 @@
     self.mDetailViewForRecentMonth.backgroundColor = [UIColor clearColor];
     
     //header
-    UILabel* sDetailHeaderWeightLostThisMonthLabel = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 60, 15)] autorelease];
+    UILabel* sDetailHeaderWeightLostThisMonthLabel = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 75, 15)] autorelease];
     sDetailHeaderWeightLostThisMonthLabel.text = NSLocalizedString(@"WeightLostThisMonth", nil);
     sDetailHeaderWeightLostThisMonthLabel.textColor = COLOR_TRIVAL_TEXT;
     sDetailHeaderWeightLostThisMonthLabel.font = [UIFont systemFontOfSize:13];

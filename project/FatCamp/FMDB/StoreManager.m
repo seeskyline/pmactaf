@@ -23,7 +23,7 @@
 #define TABLE_NAME_ROUNDS         @"rounds"
 
 #ifdef DEBUG
-#define REMOVE_EXISTING_DB_ON_LAUNCH
+//#define REMOVE_EXISTING_DB_ON_LAUNCH
 #endif
 
 FMDatabase* ssFMDatabase;
