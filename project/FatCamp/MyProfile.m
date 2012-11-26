@@ -220,6 +220,7 @@
                             {
                                 NSDateFormatter* sDateFormatter = [[NSDateFormatter alloc] init];
                                 sDate4WeightLabel.text = [sDateFormatter standardYMDFormatedStringLeadigZero:self.mUserInfo.mNewDateWeight.mDate];
+                                [sDateFormatter release];
                             }
                             sCell.detailTextLabel.text = [NSString stringWithFormat:@"%.1f kg", self.mUserInfo.mNewDateWeight.mWeight];
                         }

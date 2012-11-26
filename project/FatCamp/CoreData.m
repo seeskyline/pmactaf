@@ -485,9 +485,9 @@ static CoreData* singleton = nil;
 - (RoundInfo*) getFakeLastRound
 {
     RoundInfo* sRoundInfo = [[[RoundInfo alloc] init] autorelease];
-    sRoundInfo.mStartDate = [[NSDate date] dateByAddingTimeInterval:-10*SECONDS_FOR_ONE_DAY];
+    sRoundInfo.mStartDate = [[NSDate date] dateByAddingTimeInterval:-27*SECONDS_FOR_ONE_DAY];
     sRoundInfo.mEndDate = [[NSDate date] dateByAddingTimeInterval:3*SECONDS_FOR_ONE_DAY];
-    sRoundInfo.mTargetWeight = 45.2f;
+    sRoundInfo.mTargetWeight = 60.0f;
     sRoundInfo.mStatus = ENUM_ROUND_STATUS_UNDERWAY;
     sRoundInfo.mRoundID = 1000;
     
@@ -497,9 +497,9 @@ static CoreData* singleton = nil;
 - (RoundInfo*) getLastRound
 {
     return [StoreManager getLastRound];
-    //test
+//test
 //    return [self getFakeLastRound];
-    //test
+//test
 }
 
 - (NSMutableArray*) getAllRounds

@@ -10,8 +10,8 @@
 #define FatCamp_SharedVariables_h
 
 
-#define APPSTORE
-//#define WEIPHONE
+//#define APPSTORE
+#define WEIPHONE
 //#define ZHUSHOU91
 //#define TONGBU
 //#define COCOACHINA

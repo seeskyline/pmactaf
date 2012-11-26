@@ -137,6 +137,7 @@
     sDayMonthLabel.font = [UIFont systemFontOfSize:14];
     sDayMonthLabel.backgroundColor = [UIColor clearColor];
     [sDateView addSubview:sDayMonthLabel];
+    [sDayMonthLabel release];
     
     UILabel* sYearLable = [[UILabel alloc] initWithFrame:CGRectMake(0, 25, 67, 15)];
     sYearLable.text = [sDateForamtter year:sNow];
@@ -146,6 +147,7 @@
     sYearLable.backgroundColor = [UIColor clearColor];
     [sDateView addSubview:sYearLable];
     
+    [sYearLable release];
     [sDateForamtter release];
     
     UIBarButtonItem* sLeftButtonItem = [[UIBarButtonItem alloc] initWithCustomView:sDateView];
