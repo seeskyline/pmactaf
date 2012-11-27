@@ -431,9 +431,23 @@ static CoreData* singleton = nil;
     return [StoreManager getWeightByDate:aDate];
 }
 
-- (double) getLastWeightBeforeDate:(NSDate*)aDate
+- (double) getLastWeightBeforeDayOfDate:(NSDate*)aDate
 {
-    return [StoreManager getLastWeightBeforeDate:aDate];
+    DateWeight* sDW = [self getLastDateWeightBeforeDayOfDate:aDate];
+    if (sDW)
+    {
+        return sDW.mWeight;
+    }
+    else
+    {
+        return -1;
+    }
+}
+
+- (DateWeight*) getLastDateWeightBeforeDayOfDate:(NSDate*)aDate
+{
+    NSDate* sEndOfTheDay = [aDate endDateOfTheDayinLocalTimezone];
+    return [StoreManager getLastDateWeightBeforeDate:sEndOfTheDay];
 }
 
 - (DateWeight*) getLastDateWeightBeforeDate:(NSDate*)aDate

@@ -23,6 +23,9 @@
 @interface MainPage ()
 {
     UIView* mMainView;
+    
+    UILabel* mDayMonthLabel;
+    UILabel* mYearLabel;
 
     XLCycleScrollView* mHorizontalScrollView;
     NSMutableArray* mChildViews;
@@ -35,6 +38,9 @@
     WeightInputView* mWeightInputView;
     PlanInputView* mPlanSettingView;
 }
+
+@property (nonatomic, retain) UILabel* mDayMonthLabel;
+@property (nonatomic, retain) UILabel* mYearLabel;
 
 @property (nonatomic, retain) XLCycleScrollView* mHorizontalScrollView;
 @property (nonatomic, retain) NSMutableArray* mChildViews;
@@ -51,6 +57,8 @@
 
 @implementation MainPage
 
+@synthesize mDayMonthLabel;
+@synthesize mYearLabel;
 @synthesize mHorizontalScrollView;
 @synthesize mChildViews;
 @synthesize mIndexOfDisplayedChildView;
@@ -88,6 +96,8 @@
 
 - (void) dealloc
 {
+    self.mDayMonthLabel = nil;
+    self.mYearLabel = nil;
     self.mHorizontalScrollView = nil;
     self.mChildViews = nil;
     self.mMainView = nil;
@@ -137,6 +147,7 @@
     sDayMonthLabel.font = [UIFont systemFontOfSize:14];
     sDayMonthLabel.backgroundColor = [UIColor clearColor];
     [sDateView addSubview:sDayMonthLabel];
+    self.mDayMonthLabel = sDayMonthLabel;
     [sDayMonthLabel release];
     
     UILabel* sYearLable = [[UILabel alloc] initWithFrame:CGRectMake(0, 25, 67, 15)];
@@ -146,7 +157,7 @@
     sYearLable.font = [UIFont systemFontOfSize:11];
     sYearLable.backgroundColor = [UIColor clearColor];
     [sDateView addSubview:sYearLable];
-    
+    self.mYearLabel = sYearLable;
     [sYearLable release];
     [sDateForamtter release];
     
@@ -193,6 +204,7 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self updateCurDateLabel];
     [self updateChildViews];
 }
 
@@ -290,6 +302,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) updateCurDateLabel
+{
+    NSDate* sNow = [NSDate date];
+    NSDateFormatter* sDateForamtter = [[NSDateFormatter alloc] init];
+
+    if (self.mDayMonthLabel)
+    {
+        self.mDayMonthLabel.text = [sDateForamtter standardMDFormatedStringLeadigZeroCN: sNow];
+    }
+    if (self.mYearLabel)
+    {
+        self.mYearLabel.text = [sDateForamtter year:sNow];
+    }
+    [sDateForamtter release];
+}
 
 - (void) logWeight
 {

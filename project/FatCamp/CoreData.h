@@ -30,8 +30,8 @@
 - (void) doSomething;
 
 - (double) getWeightByDate:(NSDate*)aDate;
-- (double) getLastWeightBeforeDate:(NSDate*)aDate;
-- (DateWeight*) getLastDateWeightBeforeDate:(NSDate*)aDate;
+- (double) getLastWeightBeforeDayOfDate:(NSDate*)aDate;
+- (DateWeight*) getLastDateWeightBeforeDayOfDate:(NSDate*)aDate;
 
 - (NSMutableArray*) getRecentWeightsForDays:(NSInteger)aNumOfDays;
 - (NSMutableArray*)getRecentWeightsForDays:(NSInteger)aNumOfDays aFirstWeight:(CGFloat*)aFirstWeight aOutMaxWeight:(CGFloat*)aOutMaxWeight aOutMinWeight:(CGFloat*)aOutMinWeight;

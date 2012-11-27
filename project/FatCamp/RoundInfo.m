@@ -10,6 +10,7 @@
 
 #import "StoreManager.h"
 #import "NSDate+MyDate.h"
+#import "CoreData.h"
 
 @interface RoundInfo()
 {
@@ -48,7 +49,8 @@
         ENUM_ROUND_STATUS sNewRoundStatus = ENUM_ROUND_STATUS_UNDERWAY;
         if ( sComparisonResult == NSOrderedAscending)
         {
-            double sWeightOfDayBeforeEndDate = [StoreManager getLastWeightBeforeDate:self.mEndDate];
+            double sWeightOfDayBeforeEndDate = [[CoreData getInstance] getLastWeightBeforeDayOfDate:self.mEndDate];
+//            double sWeightOfDayBeforeEndDate = [StoreManager getLastWeightBeforeDate:self.mEndDate];
             if (-1 != sWeightOfDayBeforeEndDate)
             {
                 if (sWeightOfDayBeforeEndDate <= self.mTargetWeight)

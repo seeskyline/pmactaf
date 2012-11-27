@@ -31,7 +31,7 @@
 + (NSMutableArray*) getAllRounds;
 
 + (CGFloat) getWeightByDate:(NSDate*)aDate;
-+ (double) getLastWeightBeforeDate:(NSDate*)aDate; //the last weight before aDate or weight on the day of aDate.
+//+ (double) getLastWeightBeforeDate:(NSDate*)aDate; //the last weight before aDate or weight on the day of aDate.
 + (DateWeight*) getLastDateWeightBeforeDate:(NSDate*)aDate; //the last weight before aDate or weight on the day of aDate.
 + (DateWeight*) getMostRecentDateWeight;
 + (CGFloat) getMostRecentWeight;

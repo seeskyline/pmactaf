@@ -17,6 +17,8 @@
 
 - (NSString*) year: (NSDate*)aDate
 {
+    [self setLocaleTimeZone];
+
     NSString* sDateStr;
     
     [self setDateFormat:@"yyyy"];
@@ -28,6 +30,8 @@
 
 - (NSString*) standardYMDFormatedString: (NSDate*)aDate
 {
+    [self setLocaleTimeZone];
+
     NSString* sDateStr;
     
     [self setDateFormat:@"yyyy-M-d"];
@@ -38,6 +42,8 @@
 
 - (NSString*) standardYMDFormatedStringLeadigZero: (NSDate*)aDate
 {
+    [self setLocaleTimeZone];
+
     NSString* sDateStr;
     
     [self setDateFormat:@"yyyy-MM-dd"];
@@ -60,6 +66,8 @@
 
 - (NSString*) standardMDFormatedStringLeadigZero: (NSDate*)aDate
 {
+    [self setLocaleTimeZone];
+
     NSString* sDateStr;
     
     [self setDateFormat:@"MM-dd"];
@@ -70,6 +78,8 @@
 
 - (NSString*) standardMDFormatedStringLeadigZeroCN: (NSDate*)aDate
 {
+    [self setLocaleTimeZone];
+
     NSString* sDateStr;
     
     NSString* sFormatStr = [NSString stringWithFormat:@"MM%@dd%@", NSLocalizedString(@"month", nil), NSLocalizedString(@"day", nil)];
@@ -82,6 +92,8 @@
 
 - (NSString*) standardMDFormatedStringCN: (NSDate*)aDate
 {
+    [self setLocaleTimeZone];
+
     NSString* sDateStr;
     
     NSString* sFormatStr = [NSString stringWithFormat:@"M%@d%@", NSLocalizedString(@"month", nil), NSLocalizedString(@"day", nil)];
@@ -93,6 +105,8 @@
 
 - (NSString*) standardMDFormatedStringCNMoreReadable: (NSDate*)aDate
 {
+    [self setLocaleTimeZone];
+
     NSString* sDateStr;
     
     if ([aDate isSameDayWith:[NSDate date]])
@@ -111,6 +125,8 @@
 
 - (NSString*) standardYMDFormatedStringLeadigZeroCN: (NSDate*)aDate
 {
+    [self setLocaleTimeZone];
+
     NSString* sDateStr;
     
     NSString* sFormatStr = [NSString stringWithFormat:@"yyyy%@MM%@dd%@",  NSLocalizedString(@"year", nil), NSLocalizedString(@"month", nil), NSLocalizedString(@"day", nil)];
@@ -122,6 +138,8 @@
 
 - (NSString*) standardYMDFormatedStringLeadigZeroMoreReadable: (NSDate*)aDate
 {
+    [self setLocaleTimeZone];
+
     NSString* sDateStr;
     if ([aDate isSameDayWith:[NSDate date]])
     {

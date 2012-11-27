@@ -379,24 +379,24 @@ FMDatabase* ssFMDatabase;
     return sWeight;
 }
 
-+ (double) getLastWeightBeforeDate:(NSDate*)aDate
-{
-    [StoreManager openIfNecessary];
-    
-    NSString* sSQLStr = @"SELECT * FROM weights WHERE time = (SELECT MAX(time) FROM weights WHERE time <= ?)";
-    FMResultSet *rs = [ssFMDatabase executeQuery:sSQLStr, aDate];
-    
-    CGFloat sWeight = -1;
-    if ([rs next])
-    {
-        sWeight = [rs doubleForColumn:@"weight"];
-    }
-    
-    [rs close];
-    
-    return sWeight;
-
-}
+//+ (double) getLastWeightBeforeDate:(NSDate*)aDate
+//{
+//    [StoreManager openIfNecessary];
+//    
+//    NSString* sSQLStr = @"SELECT * FROM weights WHERE time = (SELECT MAX(time) FROM weights WHERE time <= ?)";
+//    FMResultSet *rs = [ssFMDatabase executeQuery:sSQLStr, aDate];
+//    
+//    CGFloat sWeight = -1;
+//    if ([rs next])
+//    {
+//        sWeight = [rs doubleForColumn:@"weight"];
+//    }
+//    
+//    [rs close];
+//    
+//    return sWeight;
+//
+//}
 
 + (DateWeight*) getLastDateWeightBeforeDate:(NSDate*)aDate
 {

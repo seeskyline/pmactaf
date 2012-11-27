@@ -216,7 +216,7 @@
     sDetailWeightUnwantedLabel.tag = TAG_DETAIL_VIEW_ROUND_WEIGHTUNWANTED_LABEL;
     [self.mDetailView addSubview:sDetailWeightUnwantedLabel];
     
-    UILabel* sDetailDaysRemainsLabel = [[[UILabel alloc]initWithFrame:CGRectMake(75+75+75-5, 15, 75, 25)] autorelease];
+    UILabel* sDetailDaysRemainsLabel = [[[UILabel alloc]initWithFrame:CGRectMake(75+75+75-8, 15, 75, 25)] autorelease];
     sDetailDaysRemainsLabel.font = [UIFont systemFontOfSize:13];
     sDetailDaysRemainsLabel.textAlignment = UITextAlignmentCenter;
     sDetailDaysRemainsLabel.textColor = MAIN_BGCOLOR_MAINTEXT;
@@ -328,7 +328,7 @@
     RoundInfo* sLastRound = [self.mCoreData getLastRound];
     NSDate* sInitDate = sLastRound.mStartDate;
     NSDate* sTargetDate = sLastRound.mEndDate;
-    double sInitWeight = [self.mCoreData getLastWeightBeforeDate:sInitDate];
+    double sInitWeight = [self.mCoreData getLastWeightBeforeDayOfDate:sInitDate];
     double sTargetWeight = sLastRound.mTargetWeight;
     
     NSDateFormatter* sDateFormatter = [[[NSDateFormatter alloc]init] autorelease];
@@ -356,7 +356,7 @@
     }
     else
     {
-        sLastWeightForRound = [self.mCoreData getLastDateWeightBeforeDate:sLastRound.mEndDate].mWeight;
+        sLastWeightForRound = [self.mCoreData getLastDateWeightBeforeDayOfDate:sLastRound.mEndDate].mWeight;
         sLastDateForRound = sLastRound.mEndDate;
     }
 
@@ -366,7 +366,7 @@
     
 //    double sWeightLost = sDateWeight.mWeight - [self.mCoreData getLastWeightBeforeDate:sLastRound.mStartDate];
     UILabel* sWeightLostLabel = (UILabel*)[self.mDetailView viewWithTag:TAG_DETAIL_VIEW_ROUND_WEIGHTLOST_LABEL];
-    sWeightLostLabel.text = [NSString stringWithFormat:@"%@", [WeightCaculator formatWeightDiffWithPlusOrNegtiveSign:sLastWeightForRound Weight1:[self.mCoreData getLastWeightBeforeDate:sLastRound.mStartDate]]];
+    sWeightLostLabel.text = [NSString stringWithFormat:@"%@", [WeightCaculator formatWeightDiffWithPlusOrNegtiveSign:sLastWeightForRound Weight1:[self.mCoreData getLastWeightBeforeDayOfDate:sLastRound.mStartDate]]];
     
 //    double sWeightDiffFromTarget = sDateWeight.mWeight - sLastRound.mTargetWeight;
     UILabel* sWeightDiffFromTargetLabel = (UILabel*)[self.mDetailView viewWithTag:TAG_DETAIL_VIEW_ROUND_WEIGHTUNWANTED_LABEL];

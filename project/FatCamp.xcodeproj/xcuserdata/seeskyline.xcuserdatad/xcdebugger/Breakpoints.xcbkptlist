@@ -1484,11 +1484,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FatCamp/MainPage.m"
-         timestampString = "375434439.173382"
+         timestampString = "375683403.259427"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "404"
-         endingLineNumber = "404"
+         startingLineNumber = "431"
+         endingLineNumber = "431"
          landmarkName = "-updateChildViews"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1497,11 +1497,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FatCamp/MainPage.m"
-         timestampString = "375434439.173382"
+         timestampString = "375683403.259427"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "457"
-         endingLineNumber = "457"
+         startingLineNumber = "484"
+         endingLineNumber = "484"
          landmarkName = "-doneWithUpdates:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1997,6 +1997,45 @@
          startingLineNumber = "403"
          endingLineNumber = "403"
          landmarkName = "+getLastDateWeightBeforeDate:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "FatCamp/RecentRoundView.m"
+         timestampString = "375687286.195611"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "328"
+         endingLineNumber = "328"
+         landmarkName = "-updateBaiscInfo"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "FatCamp/RecentRoundView.m"
+         timestampString = "375687348.259923"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "300"
+         endingLineNumber = "300"
+         landmarkName = "-update"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "FatCamp/RecentRoundView.m"
+         timestampString = "375688155.082015"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "327"
+         endingLineNumber = "327"
+         landmarkName = "-updateBaiscInfo"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
