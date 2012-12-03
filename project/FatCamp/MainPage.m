@@ -15,7 +15,7 @@
 #import "SharedVariables.h"
 #import "ATMHud.h"
 #import "PageControlEx.h"
-
+#import "MobClick.h"
 
 #define TAG_FOR_TITLE_LABEL_IN_NAVI_TITLEVIEW       101
 #define TAG_FRO_PAGE_CONTROL_IN_NAVI_TITLEVIEW      102
@@ -496,10 +496,14 @@
         NSString* sNotice = nil;
         if (self.mCurPopView == self.mWeightInputView)
         {
+            [MobClick event:@"UEID_LOG_WEIGHT"];
+
             sNotice = NSLocalizedString(@"you have saved you weight records", nil);
         }
         else if (self.mCurPopView == self.mPlanSettingView)
         {
+            [MobClick event:@"UEID_SET_TARGET"];
+
             sNotice = NSLocalizedString(@"your plan has been saved", nil);
         }
         else

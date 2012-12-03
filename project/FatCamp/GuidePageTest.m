@@ -26,6 +26,8 @@
 
 #import "CopyrightView.h"
 
+#import "MobClick.h"
+
 @interface GuidePageTest ()
 {
     SVSegmentedControl* mSegmentedControl;
@@ -309,6 +311,8 @@
 
 - (void) startTesting
 {
+
+    
     BOOL sIsFemale;
     double sHeight;
     double sWeight;
@@ -316,6 +320,29 @@
     sIsFemale = [self getCurIsFemale];
     sHeight = [self.mHeightTextField.text doubleValue];
     sWeight = [self.mWeightTextField.text doubleValue];
+    
+    
+    //
+    NSString* sGenderStr = nil;
+    NSString* sHeightStr = nil;
+    NSString* sWeightStr = nil;
+    
+    if (sIsFemale)
+    {
+        sGenderStr = @"F";
+    }
+    else
+    {
+        sGenderStr = @"M";
+    }
+    sHeightStr = [NSString stringWithFormat:@"%.1f", sHeight];
+    sWeightStr = [NSString stringWithFormat:@"%.1f", sWeight];
+    
+    NSDictionary* sDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                           sGenderStr, @"Gender", sHeightStr, @"Height", sWeightStr, @"Weight", nil];
+    [MobClick event:@"UEID_START_TEST" attributes: sDict];
+
+    //
     
     BOOL isHeightValid = [WeightCaculator isHeightValid:sHeight];
     BOOL isWeightValid = [WeightCaculator isWeightValid:sWeight];

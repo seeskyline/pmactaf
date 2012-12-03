@@ -18,6 +18,9 @@
 #import "KGModal.h"
 #import "CopyrightView.h"
 
+#import "MobClick.h"
+
+
 #import <QuartzCore/QuartzCore.h>
 
 
@@ -340,19 +343,26 @@
     UITabBarController* sTabBarController = [[SharedStates getInstance] getMainTabController];
     sTabBarController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     
+    NSString* sStatus = nil;
     if ([self respondsToSelector:@selector(presentViewController:animated:completion:)])
     {
-        [self presentViewController:sTabBarController animated:YES completion:nil];       
+        [self presentViewController:sTabBarController animated:YES completion:nil];
+        sStatus = @"success";
     }
     else if ([self respondsToSelector:@selector(presentModalViewController:animated:)])
     {
         [self presentModalViewController:sTabBarController animated:YES];
+        sStatus = @"success";
     }
     else
     {
-        return;
+        sStatus = @"failure";
     }
+
+    NSDictionary* sDict = [NSDictionary dictionaryWithObjectsAndKeys:sStatus, @"status", nil];
+    [MobClick event:@"UEID_PASS_TEST" attributes: sDict];
     
+    return;
 }
 
 - (void)didReceiveMemoryWarning

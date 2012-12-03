@@ -11,6 +11,8 @@
 #import "StoreManager.h"
 #import "ATMHud.h"
 
+#import "MobClick.h"
+
 #import <QuartzCore/QuartzCore.h>
 
 
@@ -127,7 +129,11 @@
     NSString* sCurName = self.mTextField.text;
     if (![sCurName isEqualToString:self.mExistingName])
     {
-        [StoreManager addOrUpdateUserInfoName:sCurName];       
+        [StoreManager addOrUpdateUserInfoName:sCurName];
+        
+        NSDictionary* sDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                               sCurName, @"newName", nil];
+        [MobClick event:@"UEID_MAKE_NAME" attributes: sDict];
     }
     [self.navigationController popViewControllerAnimated:YES];
 }

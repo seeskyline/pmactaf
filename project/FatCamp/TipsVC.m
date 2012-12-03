@@ -13,6 +13,8 @@
 #import "StoreManager.h"
 #import "ContentViewController.h"
 
+#import "MobClick.h"
+
 #define SECTION_NAME @"tips"
 
 @interface TipsVC ()
@@ -233,7 +235,7 @@
     Item* sItem = [self getItemByIndexPath:indexPath];
     NSString* sTitle = sItem.mName;
     NSString* sLocV = sItem.mLocation;
-    
+
     
     NSString* sBundlePath = [[NSBundle mainBundle] bundlePath];
     NSString* sLoc = [sBundlePath stringByAppendingPathComponent:sLocV];
@@ -254,6 +256,9 @@
     //refresh the corresponding item's isRead status if necessary.
 //    [self markItemOfSeletedRowAsReaded];
     
+    NSDictionary* sDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                           sItem.mName, @"title", nil];
+    [MobClick event:@"UEID_READ_TIPS" attributes: sDict];
     
     return;
 }

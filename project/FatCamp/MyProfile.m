@@ -26,6 +26,8 @@
 
 #import "BMIReference.h"
 
+#import "MobClick.h"
+
 #define NUM_OF_SECTIONS 2
 #define TAG_FOR_DATE4WEIGHT_LABEL 1000
 
@@ -416,6 +418,8 @@
 
 - (void) presentAbout
 {
+    [MobClick event:@"UEID_VISIT_ABOUT"];
+
     [self restoreBackBarButtonOnPushedController];
     
     AboutViewController* sAboutViewController = [[AboutViewController alloc] init];

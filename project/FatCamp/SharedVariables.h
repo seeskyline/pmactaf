@@ -11,7 +11,7 @@
 
 
 //#define APPSTORE
-#define WEIPHONE
+//#define WEIPHONE
 //#define ZHUSHOU91
 //#define TONGBU
 //#define COCOACHINA
